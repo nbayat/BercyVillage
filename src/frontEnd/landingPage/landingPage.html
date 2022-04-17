@@ -3,27 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
-    <script src="./landingPage.js"></script>
+    <script src="./stickNavBar.js"></script>
+    <script src="./loginOverlay.js"></script>
     <link rel="stylesheet" href="./landingPage.css">
+    <link rel="stylesheet" href="./loginOverlay.css">
 
 
     <title>Title</title>
 </head>
 <body>
 <header>
-    <a href="#">
-        <p class="logo">U-Paris</p>
-    </a>
     <nav class="navbar">
         <a href="#home">Accueil</a>
         <a href="#home">about</a>
-        <a href="#home">Connection</a>
+        <span onclick="openNav()">Connection</span>
         <a href="#home">Accueil</a>
     </nav>
-    <div class="icons">
-        <span class="material-icons-round">search</span>
-        <span class="material-icons-round">account_circle</span>
+
+    <div id="myNav" class="overlay">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="overlay-content">
+            <form class="box" method="post">
+                <h1>Connexion</h1>
+                <input type="text" placeholder="Identifiant">
+                <input type="password" placeholder="Mot de passe">
+                <input type="submit" name="" value="Connection">
+                <a href="#"> Pas de Compte</a>
+            </form>
+        </div>
+
     </div>
+
 </header>
 </body>
 </html>
