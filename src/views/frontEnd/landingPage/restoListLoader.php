@@ -1,70 +1,59 @@
 <?php
-require_once '../../../core/mysql_connection.php';
+require_once '/Users/nima/dev/leProjet/src/core/mysql_connection.php';
 
 $nbStar = 3;
 $imgPath = '../../assets/img/FenetreSurCour.png';
 $restoName = 'Hippopotamus';
 $restoAdress = '45 Cr Saint-Emilion, 75012';
 
-function echoImg($imgPath){
-    echo "<img src='$imgPath' alt=''>";
-}
-
 function echoStar($nbStar){
+    $tmp = '';
     for($i = 0; $i < $nbStar; $i++){
-        echo '<span class="material-icons-round" style="color: #e1e10a">star</span>';
+        $tmp .= '<span class="material-icons-round" style="color: #e1e10a">star</span>';
     }
     for($j = 0; $j < 5 - $nbStar; $j++){
-        echo '<span class="material-icons-round" style="color: black">star</span>';
+        $tmp .= '<span class="material-icons-round" style="color: white">star</span>';
     }
+
+    return $tmp;
 }
 
-function echoName($restoName){
-    echo "<h2>$restoName</h2>";
+function returnItem($imgPath, $nbStar, $restoName, $restoAdress){
+
+    $tmp = "<html></html>";
+
+    $tmp .= "<div class='cardItem'>";
+    $tmp .= "<div class='cardItemImage'>";
+    $tmp .= "<img src='$imgPath' alt=''>";
+    $tmp .= "</div>";
+
+    $tmp .= "<div class='cardItemTexte'>";
+    $tmp .= "<h2 style='text-decoration: underline'>$restoName</h2>";
+    $tmp .= "<p1>$restoAdress</p1>";
+    $tmp .= "</div>";
+
+    $tmp .= "<div class='cardItemRate'>";
+    $tmp .= echoStar($nbStar);
+    $tmp .= "</div>";
+
+    $tmp .= "</div>";
+
+    return $tmp;
+
+
 }
 
-function echoAdress($restoAdress){
-    echo "<p1>$restoAdress</p1>";
+$conn = getConnection();
+
+$conn->select_db('leProjet');
+
+$result = mysqli_query($conn, 'SELECT * FROM restaurants');
+while ($row = mysqli_fetch_array($result)) {
+    // echo $row['nom'];
+    echo returnItem($row['img__Path'], intval($row['note']), $row['nom'], $row['adress']);
 }
-
-
-function echoCardItem($imgPath, $nbStar, $restoName, $restoAdress){
-
-    echo "<div class='cardItem'>";
-    echo "<div class='cardItemImage'>";
-    echoImg($imgPath);
-    echo "</div>";
-
-    echo "<div class='cardItemTexte'>";
-    echoName($restoName);
-    echoAdress($restoAdress);
-    echo "</div>";
-
-    echo "<div class='cardItemRate'>";
-    echoStar($nbStar);
-    echo "</div>";
-
-    echo "</div>";
+for ($i = 0; $i < 3 - $result->num_rows % 3; $i++){
+    echo "<div class='cardItemEmpty'></div>";
 }
-
-
 ?>
 
-<style>
-
-
-
-</style>
-
-<html lang="fr">
-<div class="column">
-    <?php echoCardItem($imgPath, $nbStar, $restoName, $restoAdress);?>
-</div>
-<div class="column">
-    <div class="cardItem"></div>
-</div>
-<div class="column">
-    <div class="cardItem"></div>
-
-</div>
-</html>
