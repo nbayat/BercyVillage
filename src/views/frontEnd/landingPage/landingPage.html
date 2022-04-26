@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
-    <script src="stickNavBar.js"></script>
-    <script src="loginOverlay.js"></script>
-    <link rel="stylesheet" href="landingPage.css">
-    <link rel="stylesheet" href="loginOverlay.css">
+    <script src="frontEnd/landingPage/stickNavBar.js"></script>
+    <script src="frontEnd/landingPage/loginOverlay.js"></script>
+    <link rel="stylesheet" href="frontEnd/landingPage/landingPage.css">
+    <link rel="stylesheet" href="frontEnd/landingPage/loginOverlay.css">
     <title>Accueil</title>
 </head>
 <body>
@@ -36,7 +36,11 @@
 
         </div>
         <div class="cardContainer">
+
             <div class="row">
+
+                <!--
+
                 <div class="column">
                     <div class="cardItem">
                         <div class="cardItemImage"></div>
@@ -69,7 +73,17 @@
                     <div class="cardItem"></div>
                 </div>
 
+                -->
+
+
+                <?php
+                include 'restoListLoader.php';
+                ?>
             </div>
+
+
+
+
         </div>
     </div>
 </html>
