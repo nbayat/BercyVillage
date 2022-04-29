@@ -1,3 +1,6 @@
 <?php
-require 'frontEnd/landingPage/landingPage.html';
+require 'frontEnd/landingPage/landingPage.php';
 ?>
+
+
+

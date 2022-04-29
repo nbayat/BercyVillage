@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
-    <script src="frontEnd/landingPage/stickNavBar.js"></script>
-    <script src="frontEnd/landingPage/loginOverlay.js"></script>
-    <link rel="stylesheet" href="frontEnd/landingPage/landingPage.css">
-    <link rel="stylesheet" href="frontEnd/landingPage/loginOverlay.css">
+    <script src="/src/views/frontEnd/landingPage/loginOverlay.js"></script>
+    <link rel="stylesheet" href="/src/views/frontEnd/landingPage/landingPage.css">
     <title>Accueil</title>
 </head>
 <body>
@@ -20,20 +18,18 @@
     <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <div class="overlay-content">
-            <form class="box" method="post">
+            <form class="box" method="post" action='/src/core/connection.php'>
                 <h1>Connexion</h1>
-                <input type="text" placeholder="Identifiant">
-                <input type="password" placeholder="Mot de passe">
+                <input type="text" placeholder="Identifiant" name="identifiant" id="a12" required>
+                <input type="password" placeholder="Mot de passe" name="password" id="a13" required>
                 <input type="submit" name="" value="Connection">
                 <a href="#"> Pas de Compte</a>
             </form>
         </div>
     </div>
 </header>
-</body>
     <div class="bodyDiv">
         <div class="landing">
-
         </div>
         <div class="cardContainer">
             <div class="row">
@@ -43,4 +39,5 @@
             </div>
         </div>
     </div>
+</body>
 </html>
