@@ -1,0 +1,95 @@
+.body{
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+
+}
+.bodyContainer {
+    margin-top: 80px;
+    width: 96%;
+    padding: 2px;
+    margin-inline: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+.landingDiv {
+    background-color: black;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.cardItem {
+    background-color: rgba(0, 0, 0, 0.91);
+    width: 400px;
+    height: 500px;
+    margin-top: 30px;
+    transition: transform .2s;
+    overflow: hidden;
+    border-radius: 20px;
+    margin-inline: 1%;
+}
+
+.cardItemEmpty {
+    width: 400px;
+    height: 500px;
+    margin-top: 30px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.cardItemImage img {
+    width: 100%;
+    height: 300px;
+}
+
+.cardItemTexte {
+    width: 100%;
+    height: 120px;
+    color: white;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+
+.cardItemTexte h1{
+    text-align: center;
+}
+
+.cardItemRate {
+    width: 100%;
+    height: 80px;
+    padding: 15px 0 0px 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+}
+
+.material-icons-round{
+    font-size: 40px;
+}
+
+.cardItem:hover {
+    transform: scale(1.1);
+    border-radius: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    overflow: hidden;
+    width: 100%;
+    padding: 1.5%;
+}
+
+
+
+
+
+
+

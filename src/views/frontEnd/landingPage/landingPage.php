@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
-    <script src="/src/views/frontEnd/landingPage/loginOverlay.js"></script>
-    <link rel="stylesheet" href="/src/views/frontEnd/landingPage/landingPage.css">
+    <link rel="stylesheet" href="/src/views/css/landingPage.css">
     <title>Accueil</title>
 </head>
 <body>
 <header>
     <nav class="navbar">
-        <a href="#home">Accueil</a>
-        <a href="#home">about</a>
-        <span onclick="openNav()">Connection</span>
-        <a href="#home">Accueil</a>
+        <a href="#home"><span class="material-icons-round">home</span></a>
+        <form class="searchSection" action="">
+            <input type="text" placeholder="Cherchez un restaurant,..." name="search" required>
+            <input type="submit" value="Aller" name="search">
+        </form>
+        <a href="#home"><span class="material-icons-round">account_circle</span></a>
     </nav>
     <div id="myNav" class="overlay">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -34,7 +35,7 @@
         <div class="cardContainer">
             <div class="row">
                 <?php
-                include 'restoListLoader.php';
+                include '/Users/nima/dev/leProjet/src/core/restoListLoader.php';
                 ?>
             </div>
         </div>

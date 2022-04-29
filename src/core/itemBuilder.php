@@ -1,11 +1,4 @@
 <?php
-require_once '/Users/nima/dev/leProjet/src/core/mysql_connection.php';
-
-$nbStar = 3;
-$imgPath = '../../assets/img/FenetreSurCour.png';
-$restoName = 'Hippopotamus';
-$restoAdress = '45 Cr Saint-Emilion, 75012';
-
 function echoStar($nbStar){
     $tmp = '';
     for($i = 0; $i < $nbStar; $i++){
@@ -37,19 +30,4 @@ function returnItem($imgPath, $nbStar, $restoName, $restoAdress){
 
     return $tmp;
 }
-
-
-$conn = getConnection();
-
-$conn->select_db('leProjet');
-
-$result = mysqli_query($conn, "SELECT * FROM restaurants");
-while ($row = mysqli_fetch_array($result)) {
-    // echo $row['nom'];
-    echo returnItem($row['img__Path'], intval($row['note']), $row['nom'], $row['adress']);
-}
-for ($i = 0; $i < 3 - $result->num_rows % 3; $i++){
-    echo "<div class='cardItemEmpty'></div>";
-}
 ?>
-
