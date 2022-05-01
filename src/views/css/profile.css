@@ -1,0 +1,77 @@
+
+.body{
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+
+}
+.bodyContainer {
+    margin-top: 100px;
+    width: 96%;
+    padding: 2px;
+    min-height: 600px;
+    margin-inline: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+}
+
+.infoContainer {
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.infoContainer p1{
+    padding: 1%;
+    text-align: center;
+}
+
+.bodyContainer hr {
+    width: 100%;
+    border: 1px solid black;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+.infoContainerProfile {
+    flex: 1;
+    border-right: black solid 2px;
+}
+
+.infoContainerAvis {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.avis{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 3px;
+    height: 50px;
+}
+
+.avis p1{
+    flex: 1;
+    flex-wrap: wrap;
+}
+
+.avis a {
+    text-decoration: none;
+    color: inherit;
+    padding-top: 10px;
+    color: #841616;
+}
