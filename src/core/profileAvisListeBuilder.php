@@ -29,7 +29,7 @@ function getAvisListe(): ?string
         $funcResault = '';
         while ($tmp = mysqli_fetch_array($resault)){
             $funcResault .= avisHTMLBodyBuilder($tmp['avis'], $tmp['note'],
-                restoIDToName($tmp['userAvisId']), returnRestoNameFromID($tmp['restaurantId']));
+                userIDToName($tmp['userAvisId']), returnRestoNameFromID($tmp['restaurantId']));
         }
         return $funcResault;
     }

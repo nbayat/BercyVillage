@@ -1,5 +1,6 @@
 <?php
 require_once '/Users/nima/dev/leProjet/src/core/mysql_connection.php';
+require_once '/Users/nima/dev/leProjet/src/core/restaurantPageAvisBuilder.php';
 
 $nom = $_GET['nom'];
 $conn = getConnection();
@@ -22,7 +23,6 @@ function echoStar($nbStar){
 }
 
 
-
 ?>
 
 <html lang="fr">
@@ -41,13 +41,17 @@ function echoStar($nbStar){
         <p1><?php echo $row['adress']?></p1>
         <hr/>
         <div class="avisDiv">
-
+            <div class="avisRow" style="height: 20px"><p1>Avis</p1><p1>Note</p1><p1>Par</p1></div>
+            <hr/>
+            <?php echo getAvisListe($row['restaurantID']); ?>
         </div>
         <hr/>
         <div class="inputBoxDiv">
-            <form class="texteInputRow" action="">
-                <input type="text" class="inputSection" placeholder="Donnez votre avis">
-                <input type="number" class="inputNum" max="5" min="0" placeholder="Notez">
+            <form class="texteInputRow" action="../core/submitAvis.php" method="post">
+                <input type="text" class="inputSection" placeholder="Donnez votre avis" name="avis">
+                <input type="number" class="inputNum" max="5" min="0" placeholder="Notez" name="note">
+                <input type="text"  placeholder="Notez" name="restoNom" style="display: none" value="<?php echo $nom; ?>">
+                <input type="text"  placeholder="Notez" name="user" style="display: none" value="<?php echo $_SESSION['user']; ?>">
                 <input type="submit" class="publierButton" placeholder="Publier">
             </form>
         </div>

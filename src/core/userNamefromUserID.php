@@ -2,7 +2,7 @@
 
 require_once 'mysql_connection.php';
 
-function restoIDToName($id)
+function userIDToName($id)
 {
     $conn = getConnection();
     $conn->select_db('leProjet');

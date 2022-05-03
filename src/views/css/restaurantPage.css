@@ -16,11 +16,11 @@
 }
 
 .mainContainerLeftDiv {
-    flex: 3;
+    flex: 4;
 }
 
 .mainContainerRightDiv {
-    flex: 2;
+    flex: 1;
     background-color: black;
     padding: 20px;
     color: white;
@@ -53,9 +53,9 @@
     border: black;
 }
 
-.avisDiv{
+.avisDiv {
     height: 500px;
-    background-color: #04AA6D;
+    overflow: scroll;
 }
 
 
@@ -68,15 +68,28 @@
 
 .mainContainerRightDiv h1{
     text-decoration: underline;
-
 }
 
 .NomNoteRow {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-.noteIcon{
+.avisRow p1 {
+    flex: 1;
+    width: 500px;
+    max-width: 25%;
+    min-height: 50px;
+    padding-top: 5px;
+    overflow-wrap: break-word;
+}
+
+.avisRow{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 
 }
