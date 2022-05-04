@@ -1,7 +1,6 @@
 <?php
-
 require_once 'mysql_connection.php';
-
+// identifiant depuis userID
 function userIDToName($id)
 {
     $conn = getConnection();

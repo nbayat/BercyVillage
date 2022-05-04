@@ -2,14 +2,15 @@
 require_once 'mysql_connection.php';
 require_once 'restoIDToName.php';
 require_once 'userNamefromUserID.php';
-
+//
+// Ce script crée la partie d'avis du user ou admin dans la page de profile
+//
 if (isset($_SESSION['user'])){
     $identifant = $_SESSION['user'];
     $dataBaseCallResault = getUserInfoFromDataBase($identifant);
     $isAdmin = $dataBaseCallResault['isAdmin'];
     $userID = $dataBaseCallResault['userID'];
 }
-
 function profileGetAvisListe(): ?string
 {
     global $isAdmin;
@@ -36,11 +37,8 @@ function profileGetAvisListe(): ?string
     }
     else return null;
 }
-
-
 function avisHTMLBodyBuilder($avis, $note, $user, $resturant, $isReportedBinary, $isAdmin): string
 {
-
     $tmp = '';
     if ($isAdmin == 1) {
         if ($isReportedBinary == 1) $tmp .= '<div class="avis" style="color: red">';
@@ -61,9 +59,6 @@ function avisHTMLBodyBuilder($avis, $note, $user, $resturant, $isReportedBinary,
 
 function supprimerUnAvisHTML($avis){
     $tmp = '';
-    //$tmp .= '<form class="supprimer" action="supprimerAvis.php" method="get">';
-    //$tmp .= '<input type="submit" name="supprimer" value="Supprimer"/>';
     $tmp .= "<a href='/src/core/supprimerAvis.php?avis=$avis' class='avis'><span class='material-icons-round'>delete</span></a>";
-    //$tmp .= '</form>';
     return $tmp;
 }

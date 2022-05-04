@@ -1,4 +1,9 @@
 <?php
+
+// ce script peut construire une card (un container) qui contient
+// les infos d'un resto comme par exemple
+// image adress nom note, etc
+
 function echoStar($nbStar){
     $tmp = '';
     for($i = 0; $i < $nbStar; $i++){
@@ -10,9 +15,7 @@ function echoStar($nbStar){
 
     return $tmp;
 }
-
 function returnItem($imgPath, $nbStar, $restoName, $restoAdress){
-
     $tmp = "<html></html>";
     $tmp .= "<a href='/src/views/restaurantPage.php?nom=$restoName' style='text-decoration: none'>";
     $tmp .= "<div class='cardItem'>";
@@ -27,7 +30,6 @@ function returnItem($imgPath, $nbStar, $restoName, $restoAdress){
     $tmp .= echoStar($nbStar);
     $tmp .= "</div>";
     $tmp .= "</a></div>";
-
     return $tmp;
 }
 ?>

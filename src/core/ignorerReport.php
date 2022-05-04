@@ -1,9 +1,12 @@
 <?php
 require_once 'sessionManager.php';
 require_once 'mysql_connection.php';
+
+// ce script ignore un avis signalé à admin
+// pas de besion de verifier admin car il est seulement accesible par la page
+// de profile d'un Admin
+
 if (isset($_GET['avis'])){
-
-
     $avis = $_GET['avis'];
     $conn = getConnection();
     $conn->select_db('leProjet');

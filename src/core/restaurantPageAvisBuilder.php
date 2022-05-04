@@ -18,9 +18,6 @@ function getAvisListe($restoID): ?string
     }
     else return null;
 }
-
-
-
 function restoAvisHTMLBodyBuilder($avis, $note, $user, $dejaReported): string
 {
     $note = ($note != 0) ? $note : '-';
@@ -34,7 +31,6 @@ function restoAvisHTMLBodyBuilder($avis, $note, $user, $dejaReported): string
     } else {
         $tmp .= "<p1 style='color: gray'>déjà signalé</p1>";
     }
-
     $tmp .= '</div>';
     return $tmp;
 }

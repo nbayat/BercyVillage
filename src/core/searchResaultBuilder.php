@@ -1,4 +1,8 @@
 <?php
+
+// ce script serve pour faire la recherche selon plusieurs critéres
+// puis il crée html nécessaire
+
 $searchResaultHtml = '';
 if (isset($_GET['searchKey'])){
     require_once '/Users/nima/dev/leProjet/src/core/mysql_connection.php';
@@ -9,13 +13,13 @@ if (isset($_GET['searchKey'])){
     // !!!!!!!!!!!
     // !!!!!!!!!!!
     // !!!!!!!!!!!
-    // Attention, nous avons besoin les chars > < = donc on peut pas sanitizer le input par ma methode
-    // clear_input definit dans src/core
+    // Attention, nous avons besoin les chars > < = donc on ne peut pas sanitizer l'input par ma methode
+    // clear_input definite dans src/core
     // donc on peut avoir injection html ou xml mais on vas verifier pour sql injection
     // en realité le projet sera plus complexe et il faut sanitizer le input contre les scripts
     // par exemple un XSS <script>alert(1)</script> mais cette partie n'est pas à php
-    // il existe deja plusieurs methodes JS pour cela qui est pas le but du cours
-    // donc on peut ignorer injection de JS ou HTML parceque on l'utilise uniquement
+    // il existe deja plusieurs methodes JS pour cela qui n'est pas le but du cours
+    // donc on peut ignorer injection de JS ou HTML parce qu'on l'utilise uniquement
     // pour cette query SQL
     // !!!!!!!!!!!
     // !!!!!!!!!!!
@@ -58,7 +62,7 @@ if (isset($_GET['searchKey'])){
         }
     }
 }
-
+// export le resultant
 function getResault(){
     global $searchResaultHtml;
     return $searchResaultHtml;

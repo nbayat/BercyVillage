@@ -1,4 +1,5 @@
 <?php
+// sanitizer un input donné
 function clear_input($data) {
     global $conn;
     $data = trim($data);

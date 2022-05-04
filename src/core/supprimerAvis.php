@@ -1,5 +1,6 @@
 <?php
 require_once 'mysql_connection.php';
+// il serve pour supprimer un avis
 if (isset($_GET['avis'])){
     $avis = $_GET['avis'];
     $conn = getConnection();

@@ -1,6 +1,6 @@
 <?php
 require_once 'mysql_connection.php';
-
+// Restaurant nom depuis son id
 function returnRestoNameFromID($id){
     $conn = getConnection();
     $conn->select_db('leProjet');
