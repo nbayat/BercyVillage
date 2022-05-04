@@ -10,7 +10,7 @@ if (isset($_SESSION['user'])){
     $userID = $dataBaseCallResault['userID'];
 }
 
-function getAvisListe(): ?string
+function profileGetAvisListe(): ?string
 {
     global $isAdmin;
     global $userID;
@@ -29,7 +29,8 @@ function getAvisListe(): ?string
         $funcResault = '';
         while ($tmp = mysqli_fetch_array($resault)){
             $funcResault .= avisHTMLBodyBuilder($tmp['avis'], $tmp['note'],
-                userIDToName($tmp['userAvisId']), returnRestoNameFromID($tmp['restaurantId']));
+                userIDToName($tmp['userAvisId']), returnRestoNameFromID($tmp['restaurantId']),
+                $tmp['isReportedBinary'], $isAdmin);
         }
         return $funcResault;
     }
@@ -37,15 +38,23 @@ function getAvisListe(): ?string
 }
 
 
-function avisHTMLBodyBuilder($avis, $note, $user, $resturant): string
+function avisHTMLBodyBuilder($avis, $note, $user, $resturant, $isReportedBinary, $isAdmin): string
 {
+
     $tmp = '';
-    $tmp .= '<div class="avis">';
+    if ($isAdmin == 1) {
+        if ($isReportedBinary == 1) $tmp .= '<div class="avis" style="color: red">';
+        else $tmp .= '<div class="avis">';
+    } else $tmp .= '<div class="avis">';
     $tmp .= "<p1>$avis</p1>";
     $tmp .= "<p1>$note</p1>";
     $tmp .= "<p1>$user</p1>";
     $tmp .= "<p1>$resturant</p1>";
     $tmp .= supprimerUnAvisHTML($avis);
+    if ($isAdmin == 1) {
+        if ($isReportedBinary == 1) $tmp .= "<p1><a href='../core/ignorerReport.php?avis=$avis'>Ignorer</a></p1>";
+        else $tmp .= "<p1>non signalé</p1>";;
+    } else $tmp .= "<p1 style='color: gray'>(non admin)</p1>";
     $tmp .= '</div>';
     return $tmp;
 }

@@ -1,4 +1,6 @@
 <?php
+require_once '../core/sessionManager.php';
+checkUserExiste();
 require_once '../core/profileBuilder.php';
 require_once '../core/profileAvisListeBuilder.php';
 ?>
@@ -24,10 +26,12 @@ require_once '../core/profileAvisListeBuilder.php';
                 <p1>Avis</p1>
                 <p1>Note</p1>
                 <p1>Par</p1>
-                <p1>nom de restaurant</p1>
+                <p1>restaurant</p1>
+                <p1>supprimer</p1>
+                <p1>signalé</p1>
             </div>
             <hr/>
-            <?php echo getAvisListe();?>
+            <?php echo profileGetAvisListe();?>
         </div>
     </div>
 </div>

@@ -1,7 +1,6 @@
 <?php
 require_once 'mysql_connection.php';
-session_start();
-$_SESSION['user'] = 'nima';
+require_once 'sessionManager.php';
 if (isset($_SESSION['user'])){
     $identifant = $_SESSION['user'];
     $dataBaseCallResault = getUserInfoFromDataBase($identifant);

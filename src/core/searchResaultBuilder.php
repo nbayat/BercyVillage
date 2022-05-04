@@ -7,7 +7,8 @@ if (isset($_GET['searchKey'])){
     $conn = getConnection();
     $conn->select_db('leProjet');
     $searchInput = clear_input($_GET['searchKey']);
-    $result = mysqli_query($conn, "SELECT * FROM restaurants where nom = '$searchInput'");
+    $result = mysqli_query($conn, "SELECT * FROM restaurants where nom LIKE '%$searchInput%' OR adress LIKE '%$searchInput%' OR note LIKE '%$searchInput%'");
+    // $result = mysqli_query($conn, "SELECT * FROM restaurants where nom = '$searchInput'");
     while ($row = mysqli_fetch_array($result)) {
         $searchResaultHtml .= returnItem($row['img__Path'], intval($row['note']), $row['nom'], $row['adress']);
     }

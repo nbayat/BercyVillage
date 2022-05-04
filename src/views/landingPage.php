@@ -1,5 +1,5 @@
 <?php
-//require 'frontEnd/landingPage/landingPage.php';
+require_once '../core/sessionManager.php';
 ?>
 
 <!DOCTYPE html>

@@ -8,16 +8,14 @@ require_once 'clear_input.php';
 if (isset($_POST['avis']) || isset($_POST['note'])){
     $avis = clear_input($_POST['avis'] ?? '');
     $rate = intval(clear_input($_POST['note']));
-    if(isset($_POST['note'])) $rate = intval(null);
-    echo $rate;
+    if(!isset($_POST['note'])) $rate = intval(null);
     $restoID = restoNameToID($_POST['restoNom']);
-    //$userName = $_POST['user'];
-    $userName = 'nima';
+    $userName = $_POST['user'];
     $userID = userNameToID($userName);
-
     $conn = getConnection();
     $conn->select_db('leProjet');
     $quary = "INSERT INTO avis(restaurantId, userAvisId, avis, note) value ('$restoID', '$userID', '$avis', '$rate')";
     mysqli_query($conn, $quary);
 }
+header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

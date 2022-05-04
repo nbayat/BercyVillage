@@ -1,6 +1,8 @@
 <?php
-require_once '/Users/nima/dev/leProjet/src/core/mysql_connection.php';
-require_once '/Users/nima/dev/leProjet/src/core/restaurantPageAvisBuilder.php';
+require_once '../core/mysql_connection.php';
+require_once '../core/restaurantPageAvisBuilder.php';
+require_once '../core/sessionManager.php';
+checkUserExiste();
 
 $nom = $_GET['nom'];
 $conn = getConnection();

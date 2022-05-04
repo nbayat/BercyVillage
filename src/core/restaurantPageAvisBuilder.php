@@ -1,8 +1,6 @@
 <?php
 require_once 'mysql_connection.php';
 require_once 'userNamefromUserID.php';
-// if (!isset($_GET['id'])) exit();
-
 
 function getAvisListe($restoID): ?string
 {
@@ -14,7 +12,7 @@ function getAvisListe($restoID): ?string
         $funcResault = '';
         while ($tmp = mysqli_fetch_array($resault)){
             $funcResault .= restoAvisHTMLBodyBuilder($tmp['avis'], $tmp['note'],
-                userIDToName($tmp['userAvisId']));
+                userIDToName($tmp['userAvisId']), $tmp['isReportedBinary']);
         }
         return $funcResault;
     }
@@ -23,7 +21,7 @@ function getAvisListe($restoID): ?string
 
 
 
-function restoAvisHTMLBodyBuilder($avis, $note, $user): string
+function restoAvisHTMLBodyBuilder($avis, $note, $user, $dejaReported): string
 {
     $note = ($note != 0) ? $note : '-';
     $tmp = '';
@@ -31,6 +29,12 @@ function restoAvisHTMLBodyBuilder($avis, $note, $user): string
     $tmp .= "<p1>$avis</p1>";
     $tmp .= "<p1>$note</p1>";
     $tmp .= "<p1>$user</p1>";
+    if ($dejaReported == 0 ) {
+        $tmp .= "<p1><a href='../core/reportToAdmin.php?avis=$avis'><span class='material-icons-round' style='color: orange'>report_problem</span></a></p1>";
+    } else {
+        $tmp .= "<p1 style='color: gray'>déjà signalé</p1>";
+    }
+
     $tmp .= '</div>';
     return $tmp;
 }
