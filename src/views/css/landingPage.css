@@ -17,8 +17,10 @@
 .landingDiv {
     background-color: black;
     width: 100%;
-    height: 500px;
+    height: 300px;
     overflow: hidden;
+    color: white;
+    border-radius: 20px;
 }
 
 .cardItem {

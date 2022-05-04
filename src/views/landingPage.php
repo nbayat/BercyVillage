@@ -17,7 +17,10 @@ require_once '../core/sessionManager.php';
         <?php require_once 'commun/navbar.php'?>
     </header>
     <div class="bodyContainer">
-        <div class="landingDiv"></div>
+        <div class="landingDiv">
+            <?php
+            include_once './animation/typeLoop.php';?>
+        </div>
         <div class="row">
             <?php
             include '/Users/nima/dev/leProjet/src/core/restoListLoader.php';
