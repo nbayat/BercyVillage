@@ -8,6 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = clear_input($_POST["identifiant"]);
     $email = clear_input($_POST["email"]);
     // on hashe le mot de pass
+    // PASSWORD_ARGON2I
     $password = password_hash(clear_input($_POST["password"]), null);
 }
 $conn = getConnection();

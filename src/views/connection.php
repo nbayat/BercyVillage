@@ -22,7 +22,7 @@ if (isset($_GET['invalide'])){
     <input type="password" placeholder="Mot de passe" name="password" required>
     <?php if(isset($error)) echo $error;?>
     <input type="submit" name="" value="Connection">
-    <a href="#"> Pas de Compte</a>
+    <a href="./signUpPage.php"> Pas de Compte</a>
 </form>
 </body>
 </html>

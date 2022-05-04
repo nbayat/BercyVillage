@@ -2,6 +2,7 @@
 require_once '../core/mysql_connection.php';
 require_once '../core/restaurantPageAvisBuilder.php';
 require_once '../core/sessionManager.php';
+
 checkUserExiste();
 
 $nom = $_GET['nom'];
