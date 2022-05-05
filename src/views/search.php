@@ -2,7 +2,12 @@
 require_once '/Users/nima/dev/leProjet/src/core/searchResaultBuilder.php';
 ?>
 
+<!DOCTYPE html>
 <html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Recherche</title>
+</head>
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">

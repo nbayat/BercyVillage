@@ -27,10 +27,14 @@ function echoStar($nbStar){
 
 
 ?>
-
+<!DOCTYPE html>
 <html lang="fr">
-<link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
-<link href="css/restaurantPage.css" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
+    <link href="css/restaurantPage.css" rel="stylesheet">
+    <title><?php echo $nom?></title>
+</head>
 <body class="body">
 <div class="mainContainer">
     <div class="mainContainerLeftDiv">

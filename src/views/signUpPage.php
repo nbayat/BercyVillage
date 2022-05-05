@@ -1,14 +1,5 @@
 <?php
-
-//require_once "/Users/nima/dev/leProjet/src/core/registrationHandeing.php";
-
-
 ?>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -17,7 +8,6 @@
     <title>S'inscrire</title>
 </head>
 <body>
-
 <form class="box" method="post" action="/src/core/registrationHanding.php">
     <h1>S'inscrire</h1>
     <input type="text" name="identifiant" placeholder="Identifiant souhité">
@@ -28,8 +18,6 @@
 
 </body>
 </html>
-
-
 
 <style>
 

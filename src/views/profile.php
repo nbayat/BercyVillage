@@ -4,7 +4,7 @@ checkUserExiste();
 require_once '../core/profileBuilder.php';
 require_once '../core/profileAvisListeBuilder.php';
 ?>
-
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
