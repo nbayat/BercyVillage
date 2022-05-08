@@ -30,6 +30,7 @@ if (isset($_GET['searchKey'])){
     // !!!!!!!!!!!
     $words = preg_replace('/[0-9]+/', '', $searchInput);
     $words = trim($words);
+    $tmpArray = []; // un array pour stocker et comparer les searchKey pour ne pas repeter un resto
     foreach (explode(' ',$words) as $word){
         if (!str_contains($word, 'note')){
             $query = "SELECT * FROM restaurants where nom LIKE '%{$word}%'";
@@ -38,7 +39,6 @@ if (isset($_GET['searchKey'])){
             $noteInput = (int) filter_var($searchInput, FILTER_SANITIZE_NUMBER_INT);
             // voir si c'est un note et identifier la condition
             if ($noteInput != 0 && str_contains($searchInput, 'note')){
-
                 if (str_contains($searchInput, '>')) {
                     $query .= "AND note >= $noteInput OR adress LIKE '%$word%' AND note >= $noteInput";
                 }
@@ -46,19 +46,19 @@ if (isset($_GET['searchKey'])){
                     $query .= "AND note <= $noteInput OR adress LIKE '%$word%' AND note <= $noteInput";
                 }
                 else if (str_contains($searchInput, '=')) {
-                    echo "ok";
                     $query .= "AND note = $noteInput OR adress LIKE '%$word%' AND note = $noteInput";
                 }
+            } else{
+                $query .= "OR adress LIKE '%$word%'";
             }
             $result = mysqli_query($conn, $query);
             while ($row = mysqli_fetch_array($result)) {
-                $searchResaultHtml .= returnItem($row['img__Path'], intval($row['note']), $row['nom'], $row['adress']);
-            }
-            if ($result->num_rows > 0){
-                for ($i = 0; $i < 3 - $result->num_rows % 3; $i++){
-                    $searchResaultHtml .= "<div class='cardItemEmpty'></div>";
+                if (!in_array($row['nom'], $tmpArray)) {
+                    $searchResaultHtml .= returnItem($row['img__Path'], intval($row['note']), $row['nom'], $row['adress']);
+                    array_push($tmpArray, $row['nom']);
                 }
             }
+
         }
     }
 }
