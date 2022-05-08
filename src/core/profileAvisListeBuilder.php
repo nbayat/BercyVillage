@@ -59,6 +59,6 @@ function avisHTMLBodyBuilder($avis, $note, $user, $resturant, $isReportedBinary,
 
 function supprimerUnAvisHTML($avis){
     $tmp = '';
-    $tmp .= "<a href='/src/core/supprimerAvis.php?avis=$avis' class='avis'><span class='material-icons-round'>delete</span></a>";
+    $tmp .= "<a href='../core/supprimerAvis.php?avis=$avis' class='avis'><span class='material-icons-round'>delete</span></a>";
     return $tmp;
 }

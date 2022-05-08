@@ -3,11 +3,12 @@
 // ce script initialise une connection vers le serveur mysql
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// vous devez mettre à les variables suivantes selon de votre configuration mysql
+// vous devez mettre à jour les variables suivantes selon de votre configuration mysql
 //
 $servername = "localhost";
-$username = "nima";
+//$username = "nima";
 $password = "leprojetNima";
+$username = "root";
 //
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 //

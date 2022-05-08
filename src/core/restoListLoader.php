@@ -1,5 +1,5 @@
 <?php
-require_once '/Users/nima/dev/leProjet/src/core/mysql_connection.php';
+require_once '../core/mysql_connection.php';
 // career les etoiles
 function echoStar($nbStar){
     $tmp = '';
@@ -14,7 +14,7 @@ function echoStar($nbStar){
 // le html nécessaire pour chaque restaurant dans la liste
 function returnItem($imgPath, $nbStar, $restoName, $restoAdress){
     $tmp = "<html></html>";
-    $tmp .= "<a target='_blank' rel='noopener noreferrer' href='/src/views/restaurantPage.php?nom=$restoName' style='text-decoration: none'>";
+    $tmp .= "<a target='_blank' rel='noopener noreferrer' href='../views/restaurantPage.php?nom=$restoName' style='text-decoration: none'>";
     $tmp .= "<div class='cardItem'>";
     $tmp .= "<div class='cardItemImage'>";
     $tmp .= "<img src='$imgPath' alt=''>";

@@ -8,7 +8,7 @@
     <title>S'inscrire</title>
 </head>
 <body>
-<form class="box" method="post" action="/src/core/registrationHanding.php">
+<form class="box" method="post" action="../core/registrationHanding.php">
     <h1>S'inscrire</h1>
     <input type="text" name="identifiant" placeholder="Identifiant souhité">
     <input type="text" name="email" placeholder="Votre mail">

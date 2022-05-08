@@ -9,9 +9,9 @@ require_once '../core/profileAvisListeBuilder.php';
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
-    <link rel="stylesheet" href="/src/views/css/navbar.css">
-    <link rel="stylesheet" href="/src/views/css/footer.css">
-    <link rel="stylesheet" href="/src/views/css/profile.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/profile.css">
     <title>Accueil</title>
 </head>
 <body class="body">

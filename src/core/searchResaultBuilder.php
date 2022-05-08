@@ -5,7 +5,7 @@
 
 $searchResaultHtml = '';
 if (isset($_GET['searchKey'])){
-    require_once '/Users/nima/dev/leProjet/src/core/mysql_connection.php';
+    require_once '../core/mysql_connection.php';
     require_once 'clear_input.php';
     require_once 'itemBuilder.php';
     $conn = getConnection();

@@ -7,9 +7,9 @@ require_once '../core/sessionManager.php';
     <head>
         <meta charset="UTF-8">
         <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Round" rel="stylesheet">
-        <link rel="stylesheet" href="/src/views/css/landingPage.css">
-        <link rel="stylesheet" href="/src/views/css/navbar.css">
-        <link rel="stylesheet" href="/src/views/css/footer.css">
+        <link rel="stylesheet" href="css/landingPage.css">
+        <link rel="stylesheet" href="css/navbar.css">
+        <link rel="stylesheet" href="css/footer.css">
         <title>Accueil</title>
     </head>
     <body class="body">
@@ -23,7 +23,7 @@ require_once '../core/sessionManager.php';
         </div>
         <div class="row">
             <?php
-            include '/Users/nima/dev/leProjet/src/core/restoListLoader.php';
+            include '../core/restoListLoader.php';
             ?>
         </div>
     </div>

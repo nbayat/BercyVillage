@@ -17,7 +17,7 @@ function echoStar($nbStar){
 }
 function returnItem($imgPath, $nbStar, $restoName, $restoAdress){
     $tmp = "<html></html>";
-    $tmp .= "<a target='_blank' rel='noopener noreferrer' href='/src/views/restaurantPage.php?nom=$restoName' style='text-decoration: none'>";
+    $tmp .= "<a target='_blank' rel='noopener noreferrer' href='../views/restaurantPage.php?nom=$restoName' style='text-decoration: none'>";
     $tmp .= "<div class='cardItem'>";
     $tmp .= "<div class='cardItemImage'>";
     $tmp .= "<img src='$imgPath' alt=''>";

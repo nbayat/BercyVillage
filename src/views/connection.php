@@ -16,7 +16,7 @@ if (isset($_GET['invalide'])){
     <title>Connection</title>
 </head>
 <body>
-<form class="box" method="post" action='/src/core/connection.php'>
+<form class="box" method="post" action='../core/connection.php'>
     <h1>Connexion</h1>
     <input type="text" placeholder="Identifiant" name="identifiant" required>
     <input type="password" placeholder="Mot de passe" name="password" required>
